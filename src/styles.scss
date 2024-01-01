@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+    /*Colors*/
+    --White:#FFFFFF;
+    --h1-color :#461510;
+    --text-color:#876965;
+    --primary-color:#E3DAD2;
+    --second-color:#FAF6F2;
+
+    /*sizings*/
+    --xs-sizing:8px;
+    --s-sizing:16px;
+    --m-sizing:24px;
+    --l-sizing:32px;
+    --xl-sizing:64px;
+    --xxl-sizing:120px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Inria Sans', sans-serif;
+}
+h1{
+    font-family: 'Italiana', sans-serif;
+}
