@@ -13,9 +13,20 @@
     --l-sizing:32px;
     --xl-sizing:64px;
     --xxl-sizing:120px;
+
+    --gap:10%;
 }
 @import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap');
+
+@mixin centerElement($height:100vh){
+    height:$height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -41,4 +52,6 @@ a{
 p{
     color: var(--text-color);
     text-align:justify;
+    width: 20%;
+    font-size: 18px;
 }

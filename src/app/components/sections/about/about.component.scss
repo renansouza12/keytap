@@ -1,18 +1,10 @@
-.about{
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10%;
+@import '../../../../styles.scss';
 
+.about{
+    @include centerElement($height:50vh);
+    flex-wrap: wrap;
     h1{
         font-size: 70px;
-    }
-
-    p{
-        width: 20%;
-        font-size: 18px;
     }
 }
  

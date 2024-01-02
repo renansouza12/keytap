@@ -1,0 +1,31 @@
+@import  '../../../../styles.scss';
+.highlight{
+    @include centerElement;
+    flex-wrap: wrap-reverse;
+    img{
+        height: 500px;
+        width: 300px;
+        object-fit: cover;
+    }
+}
+
+@media (max-width:1000px) {
+    .highlight{
+        p{
+            width: 45%;
+        }
+        img{
+            height: 400px;
+            width: 200px;   
+        }
+    }
+}
+@media (max-width:425px) {
+    .highlight{
+        margin-top: 4vh;
+        img{
+            height: 300px;
+            width: 200px;   
+        }
+    }
+}
