@@ -24,6 +24,7 @@
 
 body{
     font-family: 'Inria Sans', sans-serif;
+    background-color: var(--second-color);
 }
 ::selection{
     background-color: var(--primary-color);
@@ -36,4 +37,8 @@ h1{
 a{
     text-decoration: none;
     color: var(--text-color);
+}
+p{
+    color: var(--text-color);
+    text-align:justify;
 }
