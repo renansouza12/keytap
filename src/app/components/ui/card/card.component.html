@@ -1,0 +1,18 @@
+<div class="card">
+    <img src="{{image}}" alt="card image">
+
+    <div class="card_informations">
+        <div class="card_price">
+            <h3>{{name || 'name'}}</h3>
+            <span>${{price || '2024'}}</span>
+        </div>
+        <button class="card_cart" (click)="btnCard()" >
+            <div class="icons">
+                <i [ngClass]="active" class="ph ph-handbag"></i>
+                <i [ngClass]="active"  class="ph ph-check"></i>
+            </div>
+           
+        </button>
+    </div>
+
+</div>
