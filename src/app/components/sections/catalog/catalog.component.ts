@@ -13,6 +13,8 @@ export class CatalogComponent {
 
   constructor(private productService: ProductsService){
     this.products$ = this.productService.getProducts();
+
+      
   }
 
 
