@@ -13,6 +13,6 @@ export class CardComponent {
   @Input() image!:string;
   
   btnCard():void{
-    this.active = 'active';
+    this.active = 'active';   
   }
 }
