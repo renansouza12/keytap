@@ -50,9 +50,14 @@ export class CatalogComponent  {
   
   constructor(private sharedService:SharedService){}
 
+  cartArray = this.sharedService.cartItens;
+
   btnCard(product:Cart):void{
-  this.sharedService.cartItens.push(product);
+  
+    if(this.cartArray.indexOf(product) == -1){
+      this.cartArray.push(product);
+    }
   }
 
-
+  
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Products } from 'src/app/models/product.model';
 import { SharedService } from 'src/app/services/shared.service';
 
@@ -7,16 +7,15 @@ import { SharedService } from 'src/app/services/shared.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit {
+export class CartComponent  {
   displayCart = this.sharedService.displayCart$;
   cartItens:Products[]=[];
 
   constructor(private sharedService: SharedService){
     this.cartItens = this.sharedService.cartItens; 
   }
-  ngOnInit(): void {
-    console.log(this.sharedService.cartItens.length);
-    
+  back():void{
+    this.sharedService.setDisplayCart(false);
   }
-
+  
 }
