@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input,Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -11,8 +11,12 @@ export class CardComponent {
   @Input() name!:string;
   @Input() price!:number;
   @Input() image!:string;
+
+  @Output() cardButton = new EventEmitter<string>();
   
   btnCard():void{
-    this.active = 'active';   
+    this.active = 'active'; 
+    this.cardButton.emit();
+    
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Products } from 'src/app/models/product.model';
+import { Cart, Products } from 'src/app/models/product.model';
+import { SharedService } from 'src/app/services/shared.service';
 
 
 @Component({
@@ -7,7 +8,7 @@ import { Products } from 'src/app/models/product.model';
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.scss']
 })
-export class CatalogComponent {
+export class CatalogComponent  {
   products:Products[] = [
     {
       "id": 1,
@@ -47,5 +48,11 @@ export class CatalogComponent {
     }
   ]
   
+  constructor(private sharedService:SharedService){}
+
+  btnCard(product:Cart):void{
+  this.sharedService.cartItens.push(product);
+  }
+
 
 }

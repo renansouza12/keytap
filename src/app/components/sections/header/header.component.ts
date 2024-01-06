@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   cartNumber:number = 0;
+  displayCart!:boolean;
+  
+  constructor(private sharedService: SharedService){}
+
+  cart(){
+      this.sharedService.setDisplayCart(!this.sharedService.getDisplayCart());
+  }
 }

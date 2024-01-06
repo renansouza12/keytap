@@ -1,0 +1,10 @@
+<div class="cart_container" *ngIf="displayCart | async">
+    <h1>Your Shopping Cart</h1>
+    <div class="cart_cards">
+        <app-cart-card *ngFor="let item of cartItens  "
+            [itemImage]="item.image"
+            [itemName]="item.name"
+            [itemPrice]="item.price"
+        />
+    </div>
+</div>
