@@ -1,4 +1,4 @@
-import { Component,Input } from '@angular/core';
+import { Component,Input,Output,EventEmitter } from '@angular/core';
 
 
 @Component({
@@ -10,5 +10,12 @@ export class CartCardComponent {
   @Input() itemImage!:string;
   @Input() itemName!:string;
   @Input() itemPrice!:number;
+
+  @Output() removeItem = new EventEmitter<string>();
+
+  excludeItem():void{
+    console.log('close card clicked');
+    this.removeItem.emit();
+  }
 
 }

@@ -7,10 +7,12 @@ import { SharedService } from 'src/app/services/shared.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  cartNumber:number = 0;
+  cartNumber!:number;
   displayCart!:boolean;
   
-  constructor(private sharedService: SharedService){}
+  constructor(private sharedService: SharedService){
+    this.cartNumber = this.sharedService.cartAmount;
+  }
 
   cart(){
       this.sharedService.setDisplayCart(!this.sharedService.getDisplayCart());

@@ -1,4 +1,5 @@
 import { Component,Input,Output, EventEmitter } from '@angular/core';
+import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
   selector: 'app-card',
@@ -6,7 +7,9 @@ import { Component,Input,Output, EventEmitter } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  active!:string;
+  constructor(private sharedService: SharedService){}
+
+  active!:any;
 
   @Input() name!:string;
   @Input() price!:number;
@@ -15,8 +18,7 @@ export class CardComponent {
   @Output() cardButton = new EventEmitter<string>();
   
   btnCard():void{
-    this.active = 'active'; 
+    this.active = 'active';  
     this.cardButton.emit();
-    
   }
 }

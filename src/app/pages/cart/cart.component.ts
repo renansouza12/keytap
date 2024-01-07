@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Products } from 'src/app/models/product.model';
+import { Cart, Products } from 'src/app/models/product.model';
 import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
@@ -7,15 +7,23 @@ import { SharedService } from 'src/app/services/shared.service';
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent  {
+export class CartComponent {
   displayCart = this.sharedService.displayCart$;
-  cartItens:Products[]=[];
+  cartItens: Products[] = [];
 
-  constructor(private sharedService: SharedService){
-    this.cartItens = this.sharedService.cartItens; 
+  constructor(private sharedService: SharedService) {
+    this.cartItens = this.sharedService.cartItens;
   }
-  back():void{
+
+  back(): void {
     this.sharedService.setDisplayCart(false);
   }
-  
+
+  removeItem(item: Cart) {
+    const itemSelected = this.cartItens.indexOf(item);
+
+    if (itemSelected !== -1) {
+      this.cartItens.splice(itemSelected, 1);
+    }
+  }
 }

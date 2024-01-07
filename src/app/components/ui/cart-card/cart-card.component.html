@@ -1,7 +1,7 @@
 <div class="cart_card">
     <img src="{{itemImage}}" alt="cart product image">
 
-    <span>${{itemName}}</span>
+    <span>{{itemName}}</span>
 
     <div class="amount">
         <p>0</p>    
@@ -17,7 +17,7 @@
 
     <span>${{itemPrice}}</span>
 
-    <button>
+    <button (click)="excludeItem()">
         <i class="ph ph-x"></i>
     </button>
 </div>
