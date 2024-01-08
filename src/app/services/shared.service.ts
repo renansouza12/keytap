@@ -12,7 +12,9 @@ export class SharedService {
   addItem(item:Cart):void{
     this.cartItens.push(item)
   }
-
+  getItems(){
+    return this.cartItens;
+  }
 
 
   private displayCart = new BehaviorSubject<boolean>(false);
