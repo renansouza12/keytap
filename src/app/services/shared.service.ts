@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {  Products } from '../models/product.model';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 
 @Injectable({
@@ -8,8 +8,6 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SharedService {
   cartItens:Products[]=[];
-
-  cartAmount:number= 0;
 
   private displayCart = new BehaviorSubject<boolean>(false);
   displayCart$ = this.displayCart.asObservable();
@@ -21,5 +19,13 @@ export class SharedService {
     return this.displayCart.value
   }
   
+  
+  private isActive = new Subject<string>();
+
+  isActive$ = this.isActive.asObservable();
+
+  updateIsActive(newValue:string){
+    this.isActive.next(newValue);
+  }
 
 }

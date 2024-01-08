@@ -1,4 +1,5 @@
-import { Component,Input,Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/services/shared.service';
 
 @Component({
@@ -6,19 +7,32 @@ import { SharedService } from 'src/app/services/shared.service';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
-export class CardComponent {
-  constructor(private sharedService: SharedService){}
+export class CardComponent implements OnDestroy, OnInit {
+  active!: string;
 
-  active!:any;
+  subscription: Subscription = new Subscription;
 
-  @Input() name!:string;
-  @Input() price!:number;
-  @Input() image!:string;
+  @Input() name!: string;
+  @Input() price!: number;
+  @Input() image!: string;
 
   @Output() cardButton = new EventEmitter<string>();
-  
-  btnCard():void{
-    this.active = 'active';  
+
+  constructor(private sharedService: SharedService) { }
+
+  ngOnInit(): void {
+    this.subscription = this.sharedService.isActive$.subscribe((newValue) => {
+      this.active = newValue;
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+
+  btnCard(): void {
+    this.active = 'active';
     this.cardButton.emit();
   }
 }

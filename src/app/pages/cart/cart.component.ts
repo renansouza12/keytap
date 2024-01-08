@@ -24,6 +24,7 @@ export class CartComponent {
 
     if (itemSelected !== -1) {
       this.cartItens.splice(itemSelected, 1);
+      this.sharedService.updateIsActive('');  
     }
   }
 }

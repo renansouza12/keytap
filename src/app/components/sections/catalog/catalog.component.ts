@@ -56,7 +56,7 @@ export class CatalogComponent  {
   
     if(this.cartArray.indexOf(product) == -1){
       this.cartArray.push(product);
-      console.log(this.cartArray.length);      
+      console.log(this.cartArray.length);    
     }
 
   }
