@@ -14,7 +14,6 @@ export class CartCardComponent {
   @Output() removeItem = new EventEmitter<string>();
 
   excludeItem():void{
-    console.log('close card clicked');
     this.removeItem.emit();
   }
 

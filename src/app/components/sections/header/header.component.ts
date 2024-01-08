@@ -10,9 +10,10 @@ export class HeaderComponent {
   cartNumber:number = 0;
   displayCart!:boolean;
   
-  constructor(private sharedService: SharedService){}
-
+  constructor(private sharedService: SharedService){
+  }
   cart(){
       this.sharedService.setDisplayCart(!this.sharedService.getDisplayCart());
   }
+
 }

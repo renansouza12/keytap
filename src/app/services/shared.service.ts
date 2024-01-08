@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {  Products } from '../models/product.model';
+import {  Cart, Products } from '../models/product.model';
 import { BehaviorSubject, Subject } from 'rxjs';
 
 
@@ -8,6 +8,12 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class SharedService {
   cartItens:Products[]=[];
+
+  addItem(item:Cart):void{
+    this.cartItens.push(item)
+  }
+
+
 
   private displayCart = new BehaviorSubject<boolean>(false);
   displayCart$ = this.displayCart.asObservable();
