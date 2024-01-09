@@ -13,6 +13,7 @@ export class CartComponent {
 
   constructor(private sharedService: SharedService) {
     this.cartItens = this.sharedService.cartItens;
+    
   }
 
   back(): void {
@@ -26,5 +27,9 @@ export class CartComponent {
       this.cartItens.splice(itemSelected, 1);
       this.sharedService.updateIsActive('');  
     }
+  }
+
+  get totalPrice():number{
+    return this.sharedService.cartItens.reduce((total, item)=> total + item.price,0);
   }
 }

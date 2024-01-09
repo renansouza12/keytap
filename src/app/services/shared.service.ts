@@ -16,7 +16,6 @@ export class SharedService {
     return this.cartItens;
   }
 
-
   private displayCart = new BehaviorSubject<boolean>(false);
   displayCart$ = this.displayCart.asObservable();
 
