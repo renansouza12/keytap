@@ -9,12 +9,6 @@ import { BehaviorSubject, Subject } from 'rxjs';
 export class SharedService {
   cartItens:Products[]=[];
 
-  addItem(item:Cart):void{
-    this.cartItens.push(item)
-  }
-  getItems(){
-    return this.cartItens;
-  }
 
   private displayCart = new BehaviorSubject<boolean>(false);
   displayCart$ = this.displayCart.asObservable();

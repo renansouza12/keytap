@@ -15,7 +15,7 @@ export class HeaderComponent {
       this.sharedService.setDisplayCart(!this.sharedService.getDisplayCart());
   }
   get cartNumber(): number {
-    return this.sharedService.getItems().length;
+    return this.sharedService.cartItens.length;
   }
 
 }

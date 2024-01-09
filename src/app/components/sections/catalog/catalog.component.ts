@@ -54,7 +54,7 @@ export class CatalogComponent  {
 
   btnCard(product:Cart):void{
     if(this.cartArray.indexOf(product) == -1){
-      this.sharedService.addItem(product)
+      this.cartArray.push(product);
     }
 
   }
