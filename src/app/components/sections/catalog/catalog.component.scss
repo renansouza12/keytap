@@ -1,9 +1,10 @@
 .catalog{
-    height: 100vh;
+    height: 100%;
     width: 80%;
-    margin: 0 auto;
+    margin: 1rem auto;
 
     .cards{
+        height: 100%;
         margin-top: 3rem;
         display: flex;
         justify-content: center;
