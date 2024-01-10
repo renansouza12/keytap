@@ -54,3 +54,9 @@
     top: -1%;
     transform: rotate(45deg);
 }
+@media (max-width:768px) {
+        .cart_container{
+            width: 90vw;
+            left: 50%;
+        }
+}
