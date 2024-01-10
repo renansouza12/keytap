@@ -36,6 +36,7 @@
 body{
     font-family: 'Inria Sans', sans-serif;
     background-color: var(--second-color);
+
 }
 ::selection{
     background-color: var(--primary-color);
@@ -70,4 +71,5 @@ p{
 button{
     border: none;
     background-color: transparent;
+    cursor: pointer;
 }

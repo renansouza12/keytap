@@ -13,6 +13,7 @@ import { CatalogComponent } from './components/sections/catalog/catalog.componen
 import { CardComponent } from './components/ui/card/card.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { FooterComponent } from './components/sections/footer/footer.component';
+import { CursorComponent } from './components/ui/cursor/cursor.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { FooterComponent } from './components/sections/footer/footer.component';
     CardComponent,
     CartComponent,
     FooterComponent,
+    CursorComponent,
   
   ],
   imports: [
