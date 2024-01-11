@@ -18,8 +18,10 @@
     "@angular/platform-browser": "^16.2.0",
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
+    "@studio-freight/lenis": "^1.0.33",
     "gsap": "^3.12.4",
     "rxjs": "~7.8.0",
+    "split-type": "^0.3.4",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
   },

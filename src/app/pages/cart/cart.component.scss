@@ -43,6 +43,10 @@
             width: 16px;
         }
     }
+
+    .back{
+        cursor: pointer;
+    }
 }
 .cart_container::after{
     position: absolute;

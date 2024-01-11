@@ -2,6 +2,9 @@ import { Component, Input, Output, EventEmitter, OnDestroy, OnInit } from '@angu
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/services/shared.service';
 
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -18,13 +21,13 @@ export class CardComponent implements OnDestroy, OnInit {
 
   @Output() cardButton = new EventEmitter<string>();
 
-  constructor(private sharedService: SharedService) { }
-
-  ngOnInit(): void {
+  constructor(private sharedService: SharedService) {
     this.subscription = this.sharedService.isActive$.subscribe((newValue) => {
       this.active = newValue;
     })
+
   }
+
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
@@ -35,4 +38,19 @@ export class CardComponent implements OnDestroy, OnInit {
     this.active = 'active';
     this.cardButton.emit();
   }
+
+  ngOnInit(): void {
+    //gsap animation
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.catalog',
+        start: "top center",
+        end: "center center",
+        scrub: true,
+      }
+    }).fromTo('.card', { opacity: 0 }, { opacity: 1, stagger: 0.4 })
+
+
+  }
+
 }
