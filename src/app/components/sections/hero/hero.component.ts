@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.scss']
 })
-export class HeroComponent  {
-  linkVideo:string = '../../../../assets/video/background-video.mp4';
-}
+export class HeroComponent {
+video:string ='../../../../assets/video/background-video.mp4';
+} 
