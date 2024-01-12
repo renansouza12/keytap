@@ -41,14 +41,14 @@ export class CardComponent implements OnDestroy, OnInit {
 
   ngOnInit(): void {
     //gsap animation
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.catalog',
-        start: "top center",
-        end: "center center",
-        scrub: true,
-      }
-    }).fromTo('.card', { opacity: 0 }, { opacity: 1, stagger: 0.4 })
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: '.catalog',
+    //     start: "top center",
+    //     end: "center center",
+    //     scrub: true,
+    //   }
+    // }).fromTo('.card', { opacity: 0 }, { opacity: 1, stagger: 0.4 })
 
 
   }
